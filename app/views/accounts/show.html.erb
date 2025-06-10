@@ -1,0 +1,5 @@
+<%= render "components/table" do %>
+  <% @account.class.column_names.each do |column_name| %>
+    <td><%= @account.send(column_name) %></td>
+  <% end %>
+<% end %>
