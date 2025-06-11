@@ -10,8 +10,8 @@ class Account < ApplicationRecord
   def pool_exclusive_process(duration: 5)
     transaction do
       sleep(duration)
-      puts "Process completed: #{Time.current.strftime('%S')}"
     end
+    puts "Job completed: #{Time.current.strftime("%H:%M:%S")}"
   end
 
   def self.method_missing(method_name, *args, &block)
